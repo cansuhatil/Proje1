@@ -4,15 +4,15 @@ import pandas as pd
 with open('NotBilgileri.csv', 'w', newline="") as file:
     myFile = csv.writer(file)
     
-    myFile.writerow(["Vize Notu","Final Notu","Ogrenci adı soyadı", \
-                     "Ogrenci numarası", "Ortalama Not" ])
+    myFile.writerow(["Ogrenci Adi Soyadi","Ogrenci Numarasi","Vize Notu","Final Notu", \
+                      "Ortalama Not" ])
  
     ogrencisayisi = int(input("Lütfen öğrenci sayısını giriniz: "))
 
 
     for i in range(ogrencisayisi):
-        ogrenciadısoyadı = input("Ogrenci "+ str(i+1) +": Oğrenci Adı Soyadı giriniz: ")
-        oğrencinumarası = input("Ogrenci "+ str(i+1) +": Oğrenci Numarası: ")
+        ogrenciadısoyadı = input("Ogrenci "+ str(i+1) +": Ogrenci Adı Soyadı giriniz: ")
+        oğrencinumarası = input("Ogrenci "+ str(i+1) +": Ogrenci Numarası: ")
         vizeNotu = float(input("Ogrenci "+ str(i+1) +": Vize notu giriniz: "))
         finalNotu = float(input("Ogrenci "+ str(i+1) +": Final notu giriniz: "))
         
