@@ -1,27 +1,43 @@
-vizeNotu=float(input("Vize notu gir : "))
-finalNotu=float(input("Final notu gir :"))
-öğrenciadısoyadı=str(input('Öğrenci Adı Soyadı: '))
-öğrencinumarası=int(input('Öğrenci Numarası: '))
+import csv
+import pandas as pd
 
-ortalamaNot=(0.4*vizeNotu)+(0.6*finalNotu)
+with open('NotBilgileri.csv', 'w', newline="") as file:
+    myFile = csv.writer(file)
+    
+    myFile.writerow(["Vize Notu","Final Notu","Ogrenci adı soyadı", \
+                     "Ogrenci numarası", "Ortalama Not", ])
  
-print("Not ortalamanız : ",ortalamaNot)
- 
-if finalNotu>=50:
-    if(ortalamaNot>=85 and finalNotu>=50):
-        print("Harf Notunuz AA. Dersi geçtiniz.")
-    elif ortalamaNot>=75 and ortalamaNot<85 :
-        print("Harf Notunuz BA. Dersi geçtiniz.")
-    elif ortalamaNot >= 70 and ortalamaNot < 75:
-        print("Harf Notunuz BB. Dersi geçtiniz.")
-    elif ortalamaNot >= 65 and ortalamaNot < 70:
-        print("Harf Notunuz CB. Dersi geçtiniz.")
-    elif ortalamaNot >= 60 and ortalamaNot < 65:
-        print("Harf Notunuz CC. Dersi geçtiniz.")
-    elif ortalamaNot >= 55 and ortalamaNot < 60:
-        print("Harf Notunuz DC. Dersi koşullu geçtiniz.")
-    elif ortalamaNot >= 50 and ortalamaNot < 55:
-        print("Harf Notunuz DD. Dersi koşullu geçtiniz.")
- 
-else:
-    print("Harf notunuz FF kaldınız .")
+    ogrencisayisi = int(input("Lütfen öğrenci sayısını giriniz: "))
+
+
+    for i in range(ogrencisayisi):
+        ogrenciadısoyadı = input("Ogrenci "+ str(i+1) +": Oğrenci Adı Soyadı giriniz: ")
+        oğrencinumarası = input("Ogrenci "+ str(i+1) +": Oğrenci Numarası: ")
+        vizeNotu = float(input("Ogrenci "+ str(i+1) +": Vize notu giriniz: "))
+        finalNotu = float(input("Ogrenci "+ str(i+1) +": Final notu giriniz: "))
+        
+        ortalamaNot=(0.4*vizeNotu)+(0.6*finalNotu)
+
+        print("Not ortalamanız : ",ortalamaNot)
+
+        if finalNotu>=50:
+            if(ortalamaNot>=85 and finalNotu>=50):
+                print("Harf Notunuz AA. Dersi geçtiniz.")
+            elif ortalamaNot>=75 and ortalamaNot<85 :
+                print("Harf Notunuz BA. Dersi geçtiniz.")
+            elif ortalamaNot >= 70 and ortalamaNot < 75:
+                print("Harf Notunuz BB. Dersi geçtiniz.")
+            elif ortalamaNot >= 65 and ortalamaNot < 70:
+                print("Harf Notunuz CB. Dersi geçtiniz.")
+            elif ortalamaNot >= 60 and ortalamaNot < 65:
+                print("Harf Notunuz CC. Dersi geçtiniz.")
+            elif ortalamaNot >= 55 and ortalamaNot < 60:
+                print("Harf Notunuz DC. Dersi koşullu geçtiniz.")
+            elif ortalamaNot >= 50 and ortalamaNot < 55:
+                print("Harf Notunuz DD. Dersi koşullu geçtiniz.")
+
+        else:
+            print("Harf notunuz FF kaldınız .")
+
+
+        myFile.writerow([ogrenciadısoyadı, oğrencinumarası, vizeNotu, finalNotu, ortalamaNot])
