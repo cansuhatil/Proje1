@@ -5,7 +5,7 @@ with open('NotBilgileri.csv', 'w', newline="") as file:
     myFile = csv.writer(file)
     
     myFile.writerow(["Vize Notu","Final Notu","Ogrenci adı soyadı", \
-                     "Ogrenci numarası", "Ortalama Not", ])
+                     "Ogrenci numarası", "Ortalama Not" ])
  
     ogrencisayisi = int(input("Lütfen öğrenci sayısını giriniz: "))
 
