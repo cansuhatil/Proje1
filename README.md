@@ -1,6 +1,6 @@
-#Proje1 
+# Proje1 
 
-Bu projede bir öğrenci not sisteminden oluşmaktadır.
+__Bu projede bir öğrenci not sisteminden oluşmaktadır.
 
 ---
 *Öğrenci Bilgileri Ad, Soyad, Okul No, vize ve final puanını girebileceği bir sistemden oluşmaktadır. 
